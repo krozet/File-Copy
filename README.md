@@ -41,7 +41,7 @@ copyFromFileToFile() takes the points to the file paths provided by the user and
 
 First &#39;to&#39; is checked if the file already exists in the path or not. If it already exists, then the copyFromFileToFile() returns -1, which gets passed into printSuccess() to signal open() failed. If the file doesn&#39;t already exist, then open() is called again but this time creates the &#39;to&#39; file and the fd is stored in fd\_output.
 
-Next the copying occurs in the while loop. This loop runs for as long as read() still has bytes to read. If read() returns -1 then there are no more bytes to be read from the file in fd\_input and the loop ends.
+Next the copying occurs in the while loop. This loop runs for as long as read() still has bytes to read. If read() returns 0 then there are no more bytes to be read from the file in fd\_input and the loop ends.
 
 I used a while loop because my buffer only holds 27 bytes, which is not enough to store the entirety of my test files mediumtest.txt and largetest.txt. The while loop reads the fd\_input until the buffer is full. Then the write() function is called. write() takes the buffer and writes as many bytes to fd\_output as fd\_input read, which was stored in bytes\_input.
 
