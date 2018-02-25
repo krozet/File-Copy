@@ -2,7 +2,6 @@
 /*
 Keawa Rozet
 CSC 415
-916796184
 */
 
 #include <stdio.h>
@@ -33,18 +32,15 @@ int main(char *argv[], int* argc) {
   char msgCopyTo[] = "Enter the name of the file to copy to:\n";
 
   //write greeting and copy from
-  char *pMsg = msgGreeting;
-  printWriteToScreen(pMsg);
-  pMsg = msgCopyFrom;
-  printWriteToScreen(pMsg);
+  printWriteToScreen(msgGreeting);
+  printWriteToScreen(msgCopyFrom);
 
   //read user input for copy from
   char *pCopyFrom = copyFrom;
   setUserInput(pCopyFrom, sizeof(copyFrom));
 
   //write prompt user for file to copy to
-  pMsg = msgCopyTo;
-  printWriteToScreen(pMsg);
+  printWriteToScreen(msgCopyTo);
 
   //read user input for copy from
   char *pCopyTo = copyTo;
